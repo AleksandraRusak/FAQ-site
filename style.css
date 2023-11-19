@@ -1,0 +1,59 @@
+html, body {
+    height: 100%;
+    max-height:max-content;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f1f4;
+    color: #19171c;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #f02f2f;
+    width: 100%;
+}
+
+.accordion {
+    width: 100%; 
+    max-width: 400px; 
+    margin-top: 20px; 
+}
+
+.title {
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #ebadad;
+    padding: 10px;
+    margin-top: 10px;
+    position: relative;
+    border-radius: 5px;
+    display: flex; /* Aligns '+' icon and title text */
+    align-items: center; /* Vertically centers '+' icon and title text */
+}
+
+.title::before {
+    content: "+";
+    margin-right: 10px;
+    font-size: 20px;
+    transition: transform 0.3s ease; /* Smooth transition for the icon */
+}
+
+.title.myActiveFaq::before {
+    content: "-";
+}
+
+.description {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: -5px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.myActiveFaq + .description {
+    display: block;
+}
